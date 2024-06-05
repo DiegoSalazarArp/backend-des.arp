@@ -1,0 +1,94 @@
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Create Books table
+-- =============================================
+CREATE TABLE Books (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(100) NOT NULL,
+    Author NVARCHAR(100) NOT NULL,
+    Genre NVARCHAR(50) NOT NULL,
+    PublishDate DATE NOT NULL
+);
+
+
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Get all books
+-- =============================================
+CREATE PROCEDURE sp_GetBooks
+AS
+BEGIN
+    SELECT * FROM Books;
+END;
+GO
+
+
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Get a book by ID
+-- =============================================
+CREATE PROCEDURE sp_GetBookById
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM Books WHERE Id = @Id;
+END;
+GO
+
+
+
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Create a new book
+-- =============================================
+CREATE PROCEDURE sp_CreateBook
+    @Title NVARCHAR(100),
+    @Author NVARCHAR(100),
+    @Genre NVARCHAR(50),
+    @PublishDate DATE
+AS
+BEGIN
+    INSERT INTO Books (Title, Author, Genre, PublishDate)
+    VALUES (@Title, @Author, @Genre, @PublishDate);
+END;
+GO
+
+
+
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Update a book
+-- =============================================
+CREATE PROCEDURE sp_UpdateBook
+    @Id INT,
+    @Title NVARCHAR(100),
+    @Author NVARCHAR(100),
+    @Genre NVARCHAR(50),
+    @PublishDate DATE
+AS
+BEGIN
+    UPDATE Books
+    SET Title = @Title, Author = @Author, Genre = @Genre, PublishDate = @PublishDate
+    WHERE Id = @Id;
+END;
+GO
+
+
+-- =============================================
+-- Author:      des.arp
+-- Create date: 05-06-2024
+-- Description: Delete a book
+-- =============================================
+CREATE PROCEDURE sp_DeleteBook
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Books WHERE Id = @Id;
+END;
+GO
+

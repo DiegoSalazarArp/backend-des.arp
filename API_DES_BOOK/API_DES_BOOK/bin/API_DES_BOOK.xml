@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_DES_BOOK</name>
+    </assembly>
+    <members>
+        <member name="T:API_DES_BOOK.Controllers.BookController">
+            <summary>
+            API controller for book-related operations.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Controllers.BookController.GetAllBooks">
+            <summary>
+            Retrieves all books from the database.
+            </summary>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> containing the list of books.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Controllers.BookController.GetBookById(System.Int32)">
+            <summary>
+            Retrieves a book by ID.
+            </summary>
+            <param name="id">The ID of the book.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> containing the book.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Controllers.BookController.CreateBook(API_DES_BOOK.Models.Entities.Book)">
+            <summary>
+            Creates a new book.
+            </summary>
+            <param name="book">The book to create.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> containing the created book.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Controllers.BookController.UpdateBook(System.Int32,API_DES_BOOK.Models.Entities.Book)">
+            <summary>
+            Updates an existing book.
+            </summary>
+            <param name="id">The ID of the book to update.</param>
+            <param name="book">The updated book data.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> containing the updated book.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Controllers.BookController.DeleteBook(System.Int32)">
+            <summary>
+            Deletes a book by ID.
+            </summary>
+            <param name="id">The ID of the book to delete.</param>
+            <returns>An <see cref="T:System.Web.Http.IHttpActionResult"/> indicating the result of the deletion.</returns>
+        </member>
+        <member name="T:API_DES_BOOK.Controllers.HomeController">
+            <summary>
+            Home controller
+            </summary>
+        </member>
+        <member name="T:API_DES_BOOK.Models.Entities.Book">
+            <summary>
+            Represents a book entity with properties for book details.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.Entities.Book.Id">
+            <summary>
+            Gets or sets the book ID.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.Entities.Book.Title">
+            <summary>
+            Gets or sets the book title.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.Entities.Book.Author">
+            <summary>
+            Gets or sets the book author.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.Entities.Book.Genre">
+            <summary>
+            Gets or sets the book genre.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.Entities.Book.PublishDate">
+            <summary>
+            Gets or sets the book publish date.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.Entities.Book.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.Entities.Book"/> class.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.Entities.Book.#ctor(System.Data.DataRow)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.Entities.Book"/> class from a DataRow.
+            </summary>
+            <param name="row">The DataRow containing book data.</param>
+        </member>
+        <member name="T:API_DES_BOOK.Models.IO.OutputBook">
+            <summary>
+            Represents the output response for books.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.IO.OutputBook.ListBooks">
+            <summary>
+            Gets or sets the list of books.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBook.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBook.#ctor(API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class with the specified response type and log ID.
+            </summary>
+            <param name="resp">The response type.</param>
+            <param name="ID_LOG">The log ID.</param>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBook.#ctor(API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook,System.Collections.Generic.List{API_DES_BOOK.Models.Entities.Book})">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class with the specified response type and list of books.
+            </summary>
+            <param name="resp">The response type.</param>
+            <param name="books">The list of books.</param>
+        </member>
+        <member name="P:API_DES_BOOK.Models.IO.OutputBookById.BookById">
+            <summary>
+            Gets or sets the list of books.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBookById.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBookById.#ctor(API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class with the specified response type and log ID.
+            </summary>
+            <param name="resp">The response type.</param>
+            <param name="ID_LOG">The log ID.</param>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBookById.#ctor(API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook,API_DES_BOOK.Models.Entities.Book)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> class with the specified response type and list of books.
+            </summary>
+            <param name="resp">The response type.</param>
+            <param name="books">The list of books.</param>
+        </member>
+        <member name="T:API_DES_BOOK.Models.IO.OutputBookController">
+            <summary>
+            Controller for book output responses.
+            </summary>
+        </member>
+        <member name="T:API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook">
+            <summary>
+            Enum representing the type of book response.
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook.Ok">
+            <summary>
+            Response type for successful operation.
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook.NoData">
+            <summary>
+            Response type for no info (initial).
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook.NotFound">
+            <summary>
+            Response type for book not found.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.IO.OutputBookController.CodError">
+            <summary>
+            Gets or sets the response type code.
+            </summary>
+        </member>
+        <member name="P:API_DES_BOOK.Models.IO.OutputBookController.MsgError">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBookController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBookController"/> class.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.IO.OutputBookController.#ctor(API_DES_BOOK.Models.IO.OutputBookController.ResponseTypeBook,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.IO.OutputBookController"/> class with the specified error code and log ID.
+            </summary>
+            <param name="CodError">The response type code.</param>
+            <param name="ID_LOG">The optional log ID.</param>
+        </member>
+        <member name="F:API_DES_BOOK.Models.Log.Logger.TipoLog.Info">
+            <summary>
+            Indica un evento de tipo informativo
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.Log.Logger.TipoLog.Warning">
+            <summary>
+            Indica un evento de tipo precaucion
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.Log.Logger.TipoLog.Error">
+            <summary>
+            Indica un evento de tipo error
+            </summary>
+        </member>
+        <member name="T:API_DES_BOOK.Models.SqlBD">
+            <summary>
+            Provides methods for interacting with the SQL database.
+            </summary>
+        </member>
+        <member name="T:API_DES_BOOK.Models.SqlBD.ControllerName">
+            <summary>
+            Enum representing the controller names.
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.SqlBD.ControllerName.Book">
+            <summary>
+            Book controller.
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.SqlBD.sqlCnn">
+            <summary>
+            Static SQL connection.
+            </summary>
+        </member>
+        <member name="F:API_DES_BOOK.Models.SqlBD.ConnectionString">
+            <summary>
+            Connection string for the SQL connection.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.#ctor(API_DES_BOOK.Models.SqlBD.ControllerName)">
+            <summary>
+            Initializes a new instance of the <see cref="T:API_DES_BOOK.Models.SqlBD"/> class with the specified controller name.
+            </summary>
+            <param name="controllerName">The controller name.</param>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.OpenSqlBD">
+            <summary>
+            Opens the SQL database connection.
+            </summary>
+            <returns>True if the connection is opened successfully, otherwise throws an exception.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.CloseSqlBd">
+            <summary>
+            Close the SQL database connection.
+            </summary>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.getBooks">
+            <summary>
+            Retrieves the list of books from the database.
+            </summary>
+            <returns>An <see cref="T:API_DES_BOOK.Models.IO.OutputBook"/> containing the list of books and the response type.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.getBookById(System.Int32)">
+            <summary>
+            Retrieves a book by ID from the database.
+            </summary>
+            <param name="id">The ID of the book.</param>
+            <returns>The book with the specified ID.</returns>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.createBook(System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            Creates a new book in the database.
+            </summary>
+            <param name="title">The title of the book.</param>
+            <param name="author">The author of the book.</param>
+            <param name="genre">The genre of the book.</param>
+            <param name="publishDate">The publish date of the book.</param>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.updateBook(System.Int32,System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            Updates an existing book in the database.
+            </summary>
+            <param name="id">The ID of the book to update.</param>
+            <param name="title">The new title of the book.</param>
+            <param name="author">The new author of the book.</param>
+            <param name="genre">The new genre of the book.</param>
+            <param name="publishDate">The new publish date of the book.</param>
+        </member>
+        <member name="M:API_DES_BOOK.Models.SqlBD.deleteBook(System.Int32)">
+            <summary>
+            Deletes a book by ID from the database.
+            </summary>
+            <param name="id">The ID of the book to delete.</param>
+        </member>
+    </members>
+</doc>
